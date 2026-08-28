@@ -45,6 +45,24 @@
   .modal-backdrop {
     backdrop-filter: blur(6px);
   }
+  .modal-panel {
+    max-height: calc(100dvh - 2rem);
+    overflow-y: auto;
+  }
+  .modal-closebar {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 1rem 0;
+    background: #12161A;
+  }
+  @media (max-width: 640px) {
+    .modal-panel {
+      max-height: calc(100dvh - 1.5rem);
+    }
+  }
   @media (prefers-reduced-motion: reduce) {
     .card-hover, html { transition: none; scroll-behavior: auto; }
   }
@@ -194,10 +212,12 @@
   <!-- MODAL -->
   <div id="modal-root" class="fixed inset-0 z-50 hidden">
     <div id="modal-backdrop" class="modal-backdrop absolute inset-0 bg-black/70"></div>
-    <div class="relative h-full overflow-y-auto flex items-start sm:items-center justify-center p-4 sm:p-8">
-      <div class="relative bg-ink border border-inkline rounded-xl max-w-2xl w-full p-6 sm:p-10 my-8">
-        <button id="modal-close" class="absolute top-5 right-5 text-slate hover:text-paper spec-tag text-xs border border-inkline rounded-full w-8 h-8 flex items-center justify-center focus-ring">✕</button>
-        <div id="modal-content" class="prose-invert"></div>
+    <div class="relative h-full flex items-start sm:items-center justify-center p-3 sm:p-8">
+      <div class="modal-panel relative bg-ink border border-inkline rounded-xl max-w-2xl w-full my-0 sm:my-8">
+        <div class="modal-closebar">
+          <button id="modal-close" class="text-slate hover:text-paper spec-tag text-xs border border-inkline rounded-full w-8 h-8 flex items-center justify-center focus-ring" aria-label="Close case study">✕</button>
+        </div>
+        <div id="modal-content" class="prose-invert px-6 pb-6 sm:px-10 sm:pb-10"></div>
       </div>
     </div>
   </div>
