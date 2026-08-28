@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sadia Afrin — CSE Student, ML &amp; Systems</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#12161A',
+          inkline: '#242B32',
+          paper: '#ECEEF2',
+          slate: '#8A93A3',
+          signal: '#4FE3C1',
+          amber: '#F2B441',
+        },
+        fontFamily: {
+          display: ['"Space Grotesk"', 'sans-serif'],
+          body: ['"IBM Plex Sans"', 'sans-serif'],
+          mono: ['"IBM Plex Mono"', 'monospace'],
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background-color: #12161A; }
+  .spec-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.02em;
+  }
+  .card-hover {
+    transition: transform 0.25s ease, border-color 0.25s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    border-color: #4FE3C1;
+  }
+  .modal-backdrop {
+    backdrop-filter: blur(6px);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .card-hover, html { transition: none; scroll-behavior: auto; }
+  }
+  ::selection { background: #4FE3C1; color: #12161A; }
+  .focus-ring:focus-visible {
+    outline: 2px solid #4FE3C1;
+    outline-offset: 3px;
+  }
+</style>
+</head>
+<body class="font-body text-paper antialiased">
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-40 bg-ink/90 backdrop-blur border-b border-inkline">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#top" class="font-display font-semibold text-lg tracking-tight">Sadia Afrin</a>
+      <nav class="hidden sm:flex items-center gap-6 text-sm text-slate">
+        <a href="#work" class="hover:text-paper transition-colors focus-ring">Work</a>
+        <a href="#skills" class="hover:text-paper transition-colors focus-ring">Skills</a>
+        <a href="#contact" class="hover:text-paper transition-colors focus-ring">Contact</a>
+      </nav>
+      <a href="#contact" class="spec-tag text-xs px-3 py-1.5 border border-signal text-signal rounded-full hover:bg-signal hover:text-ink transition-colors focus-ring">
+        [ EMAIL ME ]
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="max-w-5xl mx-auto px-6 pt-20 pb-16">
+    <p class="spec-tag text-xs text-signal mb-4">[ CSE STUDENT — AIUB — ML &amp; SYSTEMS ]</p>
+    <h1 class="font-display font-semibold text-4xl sm:text-5xl leading-tight max-w-2xl mb-6">
+      I'm Sadia Afrin, a CSE student at AIUB.
+    </h1>
+    <p class="text-lg text-slate max-w-xl leading-relaxed mb-4">
+      I build systems that have to work under real constraints — like a TinyML model that had to fit in under 35 KB, or a full-stack app handling live data.
+    </p>
+    <p class="text-lg text-slate max-w-xl leading-relaxed mb-10">
+      I care about the trade-off behind every decision, not just whether it runs.
+    </p>
+    <div class="flex flex-wrap gap-3">
+      <a href="#contact" class="font-display font-medium px-5 py-3 bg-signal text-ink rounded-md hover:bg-paper transition-colors focus-ring">
+        Email me about a project
+      </a>
+      <a href="#work" class="font-display font-medium px-5 py-3 border border-inkline rounded-md hover:border-signal transition-colors focus-ring">
+        See the work
+      </a>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="border-t border-inkline">
+    <div class="max-w-5xl mx-auto px-6 py-14">
+      <p class="spec-tag text-xs text-amber mb-8">[ STACK ]</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div>
+          <h3 class="font-display font-medium text-sm text-slate mb-3 uppercase tracking-wide">ML &amp; Data</h3>
+          <p class="text-sm leading-relaxed">Python, TensorFlow, TensorFlow Lite Micro, NumPy, Pandas, Scikit-learn</p>
+        </div>
+        <div>
+          <h3 class="font-display font-medium text-sm text-slate mb-3 uppercase tracking-wide">Languages &amp; Systems</h3>
+          <p class="text-sm leading-relaxed">C++, C#, Java, C, SQL, MATLAB</p>
+        </div>
+        <div>
+          <h3 class="font-display font-medium text-sm text-slate mb-3 uppercase tracking-wide">Web &amp; Backend</h3>
+          <p class="text-sm leading-relaxed">HTML5, CSS3, JavaScript, PHP, MySQL</p>
+        </div>
+        <div>
+          <h3 class="font-display font-medium text-sm text-slate mb-3 uppercase tracking-wide">Tools &amp; Hardware</h3>
+          <p class="text-sm leading-relaxed">Git, GitHub, Proteus, Arduino IDE, VS Code</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work" class="border-t border-inkline">
+    <div class="max-w-5xl mx-auto px-6 py-14">
+      <p class="spec-tag text-xs text-amber mb-8">[ CASE STUDIES ]</p>
+
+      <div class="grid gap-6">
+
+        <!-- Card 1: TinyML -->
+        <button data-modal="tinyml" class="modal-trigger card-hover text-left w-full border border-inkline rounded-xl p-6 sm:p-8 focus-ring">
+          <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+            <h3 class="font-display font-semibold text-2xl">TinyML for Solar Microgrid Energy Prediction</h3>
+            <span class="spec-tag text-xs text-signal border border-signal/40 rounded-full px-3 py-1 whitespace-nowrap">91% ACC · &lt;35 KB · MS LATENCY</span>
+          </div>
+          <p class="text-slate leading-relaxed mb-4">
+            Built a lightweight ML model to predict power spikes on solar-powered IoT nodes — running fully on the microcontroller, no cloud calls. Picked a 1D CNN over an LSTM to fit the memory budget, then fixed a quantization accuracy drop by recalibrating the calibration dataset to represent real power spikes.
+          </p>
+          <span class="spec-tag text-xs text-amber">READ THE FULL CASE STUDY →</span>
+        </button>
+
+        <!-- Card 2: Graphics -->
+        <button data-modal="graphics" class="modal-trigger card-hover text-left w-full border border-inkline rounded-xl p-6 sm:p-8 focus-ring">
+          <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+            <h3 class="font-display font-semibold text-2xl">Dynamic Environmental Scenario Simulation</h3>
+            <span class="spec-tag text-xs text-signal border border-signal/40 rounded-full px-3 py-1 whitespace-nowrap">0 FRAME DROPS · C++/OPENGL</span>
+          </div>
+          <p class="text-slate leading-relaxed mb-4">
+            Built a C++/OpenGL simulation of a rural village with animated vehicles, lighting, and a full day-to-night cycle. Fixed a matrix-stacking bug that made objects drift and scale unpredictably by isolating each object's transform with push/pop.
+          </p>
+          <span class="spec-tag text-xs text-amber">READ THE FULL CASE STUDY →</span>
+        </button>
+
+        <!-- Card 3: Pet Adoption -->
+        <button data-modal="petadoption" class="modal-trigger card-hover text-left w-full border border-inkline rounded-xl p-6 sm:p-8 focus-ring">
+          <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+            <h3 class="font-display font-semibold text-2xl">Pet Adoption Platform</h3>
+            <span class="spec-tag text-xs text-signal border border-signal/40 rounded-full px-3 py-1 whitespace-nowrap">INSTANT FILTERED SEARCH</span>
+          </div>
+          <p class="text-slate leading-relaxed mb-4">
+            Full-stack platform (PHP/MySQL) built to replace shelters' Facebook-post adoption process. Split image uploads into a dedicated handler after a monolithic script kept breaking, and kept the application form flat on purpose to lower the barrier to apply.
+          </p>
+          <span class="spec-tag text-xs text-amber">READ THE FULL CASE STUDY →</span>
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / CTA -->
+  <section id="contact" class="border-t border-inkline">
+    <div class="max-w-5xl mx-auto px-6 py-16 text-center">
+      <p class="spec-tag text-xs text-signal mb-4">[ GET IN TOUCH ]</p>
+      <h2 class="font-display font-semibold text-3xl sm:text-4xl mb-6 max-w-2xl mx-auto">
+        Working on ML research or need an engineer who thinks through the trade-offs?
+      </h2>
+      <a href="mailto:sadiaafrinsadia2017@gmail.com" class="inline-block font-display font-medium px-6 py-3 bg-signal text-ink rounded-md hover:bg-paper transition-colors focus-ring">
+  sadiaafrinsadia2017@gmail.com
+</a>
+      
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-inkline">
+    <div class="max-w-5xl mx-auto px-6 py-8 flex flex-wrap items-center justify-between gap-4 text-sm text-slate">
+      <span>© 2026 Sadia Afrin</span>
+      <div class="flex gap-6">
+        <a href="https://github.com/Sadia-afrin23" target="_blank" rel="noopener" class="hover:text-signal transition-colors focus-ring">GitHub</a>
+        <a href="https://www.linkedin.com/in/sadia-afrin-prottasha/" target="_blank" rel="noopener" class="hover:text-signal transition-colors focus-ring">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div id="modal-root" class="fixed inset-0 z-50 hidden">
+    <div id="modal-backdrop" class="modal-backdrop absolute inset-0 bg-black/70"></div>
+    <div class="relative h-full overflow-y-auto flex items-start sm:items-center justify-center p-4 sm:p-8">
+      <div class="relative bg-ink border border-inkline rounded-xl max-w-2xl w-full p-6 sm:p-10 my-8">
+        <button id="modal-close" class="absolute top-5 right-5 text-slate hover:text-paper spec-tag text-xs border border-inkline rounded-full w-8 h-8 flex items-center justify-center focus-ring">✕</button>
+        <div id="modal-content" class="prose-invert"></div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  const caseStudies = {
+    tinyml: {
+      tag: "91% ACC · <35 KB · MS LATENCY",
+      title: "TinyML for Solar Microgrid Energy Prediction",
+      stack: "Python, TensorFlow Lite Micro, 1D CNN, 8-bit post-training quantization",
+      sections: [
+        ["The problem", "Real-time energy management for solar-powered IoT microgrids. The goal: predict power generation and consumption spikes directly on edge hardware. I chose TinyML on purpose, not by default. Solar IoT nodes run on strict energy budgets and limited memory. Sending raw sensor data to the cloud continuously burns power and adds latency. Edge inference on the microcontroller itself was a hard requirement, not a nice-to-have."],
+        ["What I built", "Trained on a public time-series energy dataset combined with simulated edge sensor constraints.<br><br><strong>1D CNN over LSTM.</strong> LSTMs need more memory overhead than a tiny microcontroller can afford. A lightweight 1D CNN got comparable performance at a fraction of the footprint.<br><br><strong>TFLite Micro with 8-bit post-training quantization.</strong> Converted the trained model to TensorFlow Lite Micro and applied 8-bit PTQ. Cut model size and memory footprint sharply, with minimal accuracy loss when done right."],
+        ["What didn't work", "First attempt: quantization-aware training with some layers left in floating point. Still exceeded the microcontroller's static RAM limit during tensor arena allocation — not close enough to matter, just over.<br><br>Second attempt: aggressive INT8 quantization across every layer. This fit in memory, but accuracy dropped sharply on sudden load-spike detection — exactly the events the model most needed to catch.<br><br>The fix wasn't more memory or less quantization. It was the calibration data. The representative dataset used for quantization calibration wasn't capturing extreme power spikes well enough. I recalibrated it to properly represent those spikes, which restored accuracy without increasing memory size at all."],
+        ["Result", "Final quantized model: under 35 KB, well within the microcontroller's static RAM budget. After recalibration, prediction accuracy on energy load and generation spikes recovered to ~91%. Inference ran in a few milliseconds on edge hardware during simulation, a sharp drop from cloud-dependent latency."],
+        ["What I'd change next", "Test on physical hardware — an ESP32 or STM32 — instead of simulation. Collect real multi-sensor solar data instead of relying on the public dataset, to handle seasonal fluctuations the current data doesn't capture. And explore pruning combined with quantization to shrink the memory footprint further without losing the accuracy I just fought to get back."]
+      ]
+    },
+    graphics: {
+      tag: "0 FRAME DROPS · C++/OPENGL",
+      title: "Dynamic Environmental Scenario Simulation",
+      stack: "C++, OpenGL",
+      sections: [
+        ["The problem", "Academic computer graphics project. The brief was real-time rendering and state management. I could have built a static scene and called it done. Instead I picked a dynamic rural village — animated vehicles, lighting transitions, a full day-to-night weather cycle — specifically because it would force me into frame-rate independent animation and real coordinate transformations."],
+        ["What I built", "The scene is broken into modular rendering functions — hills, sunrise, animated cars, lighting — instead of one long procedure. That split made the code something you could actually maintain, not just run once and forget.<br><br><strong>Delta-time over frame counters.</strong> Day-to-night transitions and car movement update based on delta time, not loop counters. That keeps animation speed consistent regardless of the machine's frame rate.<br><br><strong>Matrix pipelines for transformation.</strong> Objects move and scale across the viewport through translation and scaling matrices, with bounds checks relative to screen edges."],
+        ["What didn't work", "Early on, I applied matrix transformations sequentially inside the main render loop without isolating each object's matrix state. The matrices compounded — cars would randomly scale up or drift off-screen as their transforms stacked on top of each other's.<br><br>Fixed it by pushing and popping the transformation matrix around each object's render call, so every object's coordinate space stayed isolated from the others.<br><br>I also abandoned custom physics for vehicle collisions. It caused jittery movement and wasn't going to be solid within the project timeframe, so I cut it rather than ship something that looked broken."],
+        ["Result", "A stable, fully animated simulation with no visual glitches or frame drops. The full day-to-night cycle, solar/lunar lighting shifts, and vehicle movement ran continuously on test machines. Presented as coursework, graded highly specifically for the frame-rate independent animation and the clean separation between objects."],
+        ["What I'd change next", "I'd replace the manual function calls with an actual scene graph data structure to handle spatial hierarchy automatically. I'd bring back collision detection using bounding volume hierarchies (BVH) so vehicle interactions work smoothly instead of jittering. And I'd move off the fixed-function OpenGL pipeline onto shader-based rendering with GLSL for real lighting."]
+      ]
+    },
+    petadoption: {
+      tag: "INSTANT FILTERED SEARCH",
+      title: "Pet Adoption Platform",
+      stack: "HTML, CSS, JavaScript, PHP, MySQL",
+      sections: [
+        ["The problem", "This started as a course assignment. I could have built a generic task tracker. Instead I picked a real gap: local rescue shelters manage adoptions through Facebook posts. Pet details get buried, lost, or inconsistent across a feed nobody can search."],
+        ["What I built", "A platform that separates public browsing from shelter admin work, so adopters don't hit a login wall just to look at pets.<br><br><strong>Public listings vs. admin controls.</strong> Anyone can browse without an account. Admins authenticate to manage requests.<br><br><strong>Flat application schema over a multi-step form.</strong> A complex form kills submissions before they start. I kept the adoption application flat and simple to lower the barrier to apply.<br><br><strong>Direct filtered queries over full-data fetches.</strong> Search by age, breed, and status hits the database with a targeted query instead of pulling everything and filtering client-side."],
+        ["What didn't work", "I first handled pet image uploads inside the same script as the form submission. One monolithic handler for both. It kept breaking — validation errors, broken file paths, submissions failing for reasons that had nothing to do with the form data itself.<br><br>I scrapped that and split it into a dedicated upload handler with its own server-side validation. Fixed it.<br><br>I also cut real-time chat between adopters and shelters. It would have added real value, but not on this timeline."],
+        ["Result", "A working local prototype, end to end: listings, filtering, and adoption applications, no errors in testing. Search queries returned filtered results instantly against sample shelter data. Image uploads processed cleanly after the rebuild. Presented it for coursework — the simplified adoption workflow specifically got positive feedback."],
+        ["What I'd change next", "The flat schema doesn't scale to real use. I'd rebuild it relational, so multiple shelters can each manage their own listings securely instead of sharing one flat structure. I'd replace the direct SQL queries with an ORM or indexed search before this touched real data volume. And I'd add automated end-to-end tests for the application pipeline instead of testing by hand."]
+      ]
+    }
+  };
+
+  const modalRoot = document.getElementById('modal-root');
+  const modalContent = document.getElementById('modal-content');
+  const modalBackdrop = document.getElementById('modal-backdrop');
+  const modalClose = document.getElementById('modal-close');
+
+  function openModal(key) {
+    const cs = caseStudies[key];
+    if (!cs) return;
+    let html = `
+      <p class="spec-tag text-xs text-signal mb-3">[ ${cs.tag} ]</p>
+      <h2 class="font-display font-semibold text-2xl sm:text-3xl mb-2">${cs.title}</h2>
+      <p class="spec-tag text-xs text-slate mb-8">${cs.stack}</p>
+    `;
+    cs.sections.forEach(([heading, body]) => {
+      html += `
+        <h3 class="font-display font-medium text-sm text-amber uppercase tracking-wide mt-8 mb-2">${heading}</h3>
+        <p class="text-slate leading-relaxed">${body}</p>
+      `;
+    });
+    modalContent.innerHTML = html;
+    modalRoot.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    modalClose.focus();
+  }
+
+  function closeModal() {
+    modalRoot.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.modal-trigger').forEach(btn => {
+    btn.addEventListener('click', () => openModal(btn.dataset.modal));
+  });
+  modalClose.addEventListener('click', closeModal);
+  modalBackdrop.addEventListener('click', closeModal);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+</script>
+
+</body>
+</html>
