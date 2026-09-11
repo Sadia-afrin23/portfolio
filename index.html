@@ -6,72 +6,7 @@
 <title>Sadia Afrin — CSE Student, ML &amp; Systems</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          ink: '#12161A',
-          inkline: '#242B32',
-          paper: '#ECEEF2',
-          slate: '#8A93A3',
-          signal: '#4FE3C1',
-          amber: '#F2B441',
-        },
-        fontFamily: {
-          display: ['"Space Grotesk"', 'sans-serif'],
-          body: ['"IBM Plex Sans"', 'sans-serif'],
-          mono: ['"IBM Plex Mono"', 'monospace'],
-        }
-      }
-    }
-  }
-</script>
-<style>
-  html { scroll-behavior: smooth; }
-  body { background-color: #12161A; }
-  .spec-tag {
-    font-family: 'IBM Plex Mono', monospace;
-    letter-spacing: 0.02em;
-  }
-  .card-hover {
-    transition: transform 0.25s ease, border-color 0.25s ease;
-  }
-  .card-hover:hover {
-    transform: translateY(-4px);
-    border-color: #4FE3C1;
-  }
-  .modal-backdrop {
-    backdrop-filter: blur(6px);
-  }
-  .modal-panel {
-    max-height: calc(100dvh - 2rem);
-    overflow-y: auto;
-  }
-  .modal-closebar {
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    display: flex;
-    justify-content: flex-end;
-    padding: 1rem 1rem 0;
-    background: #12161A;
-  }
-  @media (max-width: 640px) {
-    .modal-panel {
-      max-height: calc(100dvh - 1.5rem);
-    }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .card-hover, html { transition: none; scroll-behavior: auto; }
-  }
-  ::selection { background: #4FE3C1; color: #12161A; }
-  .focus-ring:focus-visible {
-    outline: 2px solid #4FE3C1;
-    outline-offset: 3px;
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body class="font-body text-paper antialiased">
 
@@ -81,6 +16,8 @@
       <a href="#top" class="font-display font-semibold text-lg tracking-tight">Sadia Afrin</a>
       <nav class="hidden sm:flex items-center gap-6 text-sm text-slate">
         <a href="#work" class="hover:text-paper transition-colors focus-ring">Work</a>
+        <a href="#thesis" class="hover:text-paper transition-colors focus-ring">Thesis</a>
+        <a href="#experience" class="hover:text-paper transition-colors focus-ring">Experience</a>
         <a href="#skills" class="hover:text-paper transition-colors focus-ring">Skills</a>
         <a href="#contact" class="hover:text-paper transition-colors focus-ring">Contact</a>
       </nav>
@@ -137,6 +74,38 @@
     </div>
   </section>
 
+  <!-- WORK EXPERIENCE -->
+  <section id="experience" class="border-t border-inkline">
+    <div class="max-w-5xl mx-auto px-6 py-14">
+      <p class="spec-tag text-xs text-amber mb-8">[ WORK EXPERIENCE ]</p>
+      <div class="grid gap-6 sm:grid-cols-2">
+        <button type="button" data-modal="flyrank" class="modal-trigger card-hover text-left w-full border border-inkline rounded-xl p-6 sm:p-8 focus-ring">
+          <div class="flex flex-wrap items-start justify-between gap-4 mb-5">
+            <div>
+              <h2 class="font-display font-semibold text-2xl">Flyrank AI</h2>
+              <p class="spec-tag text-xs text-signal mt-2">MACHINE LEARNING ENGINEER · INTERNSHIP</p>
+            </div>
+            <span class="spec-tag text-xs text-amber border border-amber/40 rounded-full px-3 py-1 whitespace-nowrap">CURRENT</span>
+          </div>
+          <p class="text-slate leading-relaxed">Currently working as a Machine Learning Engineer Intern, contributing to practical machine learning work and AI-focused engineering projects.</p>
+          <span class="spec-tag text-xs text-amber inline-block mt-5">VIEW EXPERIENCE CASE STUDY →</span>
+        </button>
+
+        <button type="button" data-modal="elite-lab" class="modal-trigger card-hover text-left w-full border border-inkline rounded-xl p-6 sm:p-8 focus-ring">
+          <div class="flex flex-wrap items-start justify-between gap-4 mb-5">
+            <div>
+              <h2 class="font-display font-semibold text-2xl">ELITE Research Lab</h2>
+              <p class="spec-tag text-xs text-signal mt-2">STUDENT RESEARCHER</p>
+            </div>
+            <span class="spec-tag text-xs text-amber border border-amber/40 rounded-full px-3 py-1 whitespace-nowrap">CURRENT</span>
+          </div>
+          <p class="text-slate leading-relaxed">Currently working as a Student Researcher, developing research experience across machine learning and emerging AI applications.</p>
+          <span class="spec-tag text-xs text-amber inline-block mt-5">VIEW EXPERIENCE CASE STUDY →</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
   <!-- WORK -->
   <section id="work" class="border-t border-inkline">
     <div class="max-w-5xl mx-auto px-6 py-14">
@@ -184,6 +153,25 @@
     </div>
   </section>
 
+  <!-- THESIS PAPER -->
+  <section id="thesis" class="border-t border-inkline">
+    <div class="max-w-5xl mx-auto px-6 py-14">
+      <p class="spec-tag text-xs text-amber mb-8">[ THESIS PAPER ]</p>
+
+      <button data-modal="thesis" class="modal-trigger card-hover text-left w-full border border-inkline rounded-xl p-6 sm:p-8 focus-ring">
+        <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+          <h2 class="font-display font-semibold text-2xl sm:text-3xl">AI-Assisted Detection of Fake News in Bangla Social Media Using Deep Learning with Explainability (XAI)</h2>
+          <span class="spec-tag text-xs text-signal border border-signal/40 rounded-full px-3 py-1 whitespace-nowrap">ACCEPTED · PRESENTED</span>
+        </div>
+        <p class="text-slate leading-relaxed mb-4">
+          Research paper on using deep learning and explainable AI to detect fake news in Bangla social media content.
+        </p>
+        <p class="spec-tag text-xs text-slate mb-4">MD. RAIHAN KABIR NIBIR · SADIA AFRIN · SAEEDA SHARMEEN</p>
+        <span class="spec-tag text-xs text-amber">READ THE PAPER SUMMARY →</span>
+      </button>
+    </div>
+  </section>
+
   <!-- CONTACT / CTA -->
   <section id="contact" class="border-t border-inkline">
     <div class="max-w-5xl mx-auto px-6 py-16 text-center">
@@ -191,7 +179,7 @@
       <h2 class="font-display font-semibold text-3xl sm:text-4xl mb-6 max-w-2xl mx-auto">
         Working on ML research or need an engineer who thinks through the trade-offs?
       </h2>
-      <a href="mailto:sadiaafrinsadia2017@gmail.com" class="inline-block font-display font-medium px-6 py-3 bg-signal text-ink rounded-md hover:bg-paper transition-colors focus-ring">
+      <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=sadiaafrinsadia2017@gmail.com" target="_blank" rel="noopener" class="inline-block font-display font-medium px-6 py-3 bg-signal text-ink rounded-md hover:bg-paper transition-colors focus-ring">
   sadiaafrinsadia2017@gmail.com
 </a>
       
@@ -223,44 +211,7 @@
   </div>
 
 <script>
-  const caseStudies = {
-    tinyml: {
-      tag: "91% ACC · <35 KB · MS LATENCY",
-      title: "TinyML for Solar Microgrid Energy Prediction",
-      stack: "Python, TensorFlow Lite Micro, 1D CNN, 8-bit post-training quantization",
-      sections: [
-        ["The problem", "Real-time energy management for solar-powered IoT microgrids. The goal: predict power generation and consumption spikes directly on edge hardware. I chose TinyML on purpose, not by default. Solar IoT nodes run on strict energy budgets and limited memory. Sending raw sensor data to the cloud continuously burns power and adds latency. Edge inference on the microcontroller itself was a hard requirement, not a nice-to-have."],
-        ["What I built", "Trained on a public time-series energy dataset combined with simulated edge sensor constraints.<br><br><strong>1D CNN over LSTM.</strong> LSTMs need more memory overhead than a tiny microcontroller can afford. A lightweight 1D CNN got comparable performance at a fraction of the footprint.<br><br><strong>TFLite Micro with 8-bit post-training quantization.</strong> Converted the trained model to TensorFlow Lite Micro and applied 8-bit PTQ. Cut model size and memory footprint sharply, with minimal accuracy loss when done right."],
-        ["What didn't work", "First attempt: quantization-aware training with some layers left in floating point. Still exceeded the microcontroller's static RAM limit during tensor arena allocation — not close enough to matter, just over.<br><br>Second attempt: aggressive INT8 quantization across every layer. This fit in memory, but accuracy dropped sharply on sudden load-spike detection — exactly the events the model most needed to catch.<br><br>The fix wasn't more memory or less quantization. It was the calibration data. The representative dataset used for quantization calibration wasn't capturing extreme power spikes well enough. I recalibrated it to properly represent those spikes, which restored accuracy without increasing memory size at all."],
-        ["Result", "Final quantized model: under 35 KB, well within the microcontroller's static RAM budget. After recalibration, prediction accuracy on energy load and generation spikes recovered to ~91%. Inference ran in a few milliseconds on edge hardware during simulation, a sharp drop from cloud-dependent latency."],
-        ["What I'd change next", "Test on physical hardware — an ESP32 or STM32 — instead of simulation. Collect real multi-sensor solar data instead of relying on the public dataset, to handle seasonal fluctuations the current data doesn't capture. And explore pruning combined with quantization to shrink the memory footprint further without losing the accuracy I just fought to get back."]
-      ]
-    },
-    graphics: {
-      tag: "0 FRAME DROPS · C++/OPENGL",
-      title: "Dynamic Environmental Scenario Simulation",
-      stack: "C++, OpenGL",
-      sections: [
-        ["The problem", "Academic computer graphics project. The brief was real-time rendering and state management. I could have built a static scene and called it done. Instead I picked a dynamic rural village — animated vehicles, lighting transitions, a full day-to-night weather cycle — specifically because it would force me into frame-rate independent animation and real coordinate transformations."],
-        ["What I built", "The scene is broken into modular rendering functions — hills, sunrise, animated cars, lighting — instead of one long procedure. That split made the code something you could actually maintain, not just run once and forget.<br><br><strong>Delta-time over frame counters.</strong> Day-to-night transitions and car movement update based on delta time, not loop counters. That keeps animation speed consistent regardless of the machine's frame rate.<br><br><strong>Matrix pipelines for transformation.</strong> Objects move and scale across the viewport through translation and scaling matrices, with bounds checks relative to screen edges."],
-        ["What didn't work", "Early on, I applied matrix transformations sequentially inside the main render loop without isolating each object's matrix state. The matrices compounded — cars would randomly scale up or drift off-screen as their transforms stacked on top of each other's.<br><br>Fixed it by pushing and popping the transformation matrix around each object's render call, so every object's coordinate space stayed isolated from the others.<br><br>I also abandoned custom physics for vehicle collisions. It caused jittery movement and wasn't going to be solid within the project timeframe, so I cut it rather than ship something that looked broken."],
-        ["Result", "A stable, fully animated simulation with no visual glitches or frame drops. The full day-to-night cycle, solar/lunar lighting shifts, and vehicle movement ran continuously on test machines. Presented as coursework, graded highly specifically for the frame-rate independent animation and the clean separation between objects."],
-        ["What I'd change next", "I'd replace the manual function calls with an actual scene graph data structure to handle spatial hierarchy automatically. I'd bring back collision detection using bounding volume hierarchies (BVH) so vehicle interactions work smoothly instead of jittering. And I'd move off the fixed-function OpenGL pipeline onto shader-based rendering with GLSL for real lighting."]
-      ]
-    },
-    petadoption: {
-      tag: "INSTANT FILTERED SEARCH",
-      title: "Pet Adoption Platform",
-      stack: "HTML, CSS, JavaScript, PHP, MySQL",
-      sections: [
-        ["The problem", "This started as a course assignment. I could have built a generic task tracker. Instead I picked a real gap: local rescue shelters manage adoptions through Facebook posts. Pet details get buried, lost, or inconsistent across a feed nobody can search."],
-        ["What I built", "A platform that separates public browsing from shelter admin work, so adopters don't hit a login wall just to look at pets.<br><br><strong>Public listings vs. admin controls.</strong> Anyone can browse without an account. Admins authenticate to manage requests.<br><br><strong>Flat application schema over a multi-step form.</strong> A complex form kills submissions before they start. I kept the adoption application flat and simple to lower the barrier to apply.<br><br><strong>Direct filtered queries over full-data fetches.</strong> Search by age, breed, and status hits the database with a targeted query instead of pulling everything and filtering client-side."],
-        ["What didn't work", "I first handled pet image uploads inside the same script as the form submission. One monolithic handler for both. It kept breaking — validation errors, broken file paths, submissions failing for reasons that had nothing to do with the form data itself.<br><br>I scrapped that and split it into a dedicated upload handler with its own server-side validation. Fixed it.<br><br>I also cut real-time chat between adopters and shelters. It would have added real value, but not on this timeline."],
-        ["Result", "A working local prototype, end to end: listings, filtering, and adoption applications, no errors in testing. Search queries returned filtered results instantly against sample shelter data. Image uploads processed cleanly after the rebuild. Presented it for coursework — the simplified adoption workflow specifically got positive feedback."],
-        ["What I'd change next", "The flat schema doesn't scale to real use. I'd rebuild it relational, so multiple shelters can each manage their own listings securely instead of sharing one flat structure. I'd replace the direct SQL queries with an ORM or indexed search before this touched real data volume. And I'd add automated end-to-end tests for the application pipeline instead of testing by hand."]
-      ]
-    }
-  };
+  let caseStudies = {};
 
   const modalRoot = document.getElementById('modal-root');
   const modalContent = document.getElementById('modal-content');
@@ -292,9 +243,18 @@
     document.body.style.overflow = '';
   }
 
-  document.querySelectorAll('.modal-trigger').forEach(btn => {
-    btn.addEventListener('click', () => openModal(btn.dataset.modal));
-  });
+  fetch('data.json')
+    .then(response => {
+      if (!response.ok) throw new Error('Could not load case studies');
+      return response.json();
+    })
+    .then(data => {
+      caseStudies = data;
+      document.querySelectorAll('.modal-trigger').forEach(btn => {
+        btn.addEventListener('click', () => openModal(btn.dataset.modal));
+      });
+    })
+    .catch(error => console.error(error));
   modalClose.addEventListener('click', closeModal);
   modalBackdrop.addEventListener('click', closeModal);
   document.addEventListener('keydown', (e) => {
