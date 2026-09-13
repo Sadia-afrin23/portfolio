@@ -183,7 +183,7 @@
   sadiaafrinsadia2017@gmail.com
 </a>
       <form action="https://formsubmit.co/sadiaafrinsadia2017@gmail.com" method="POST" class="contact-form">
-        <input type="hidden" name="_next" value="https://portfolio-seven-eta-vcpgvfbr0y.vercel.app/#contact">
+        <input type="hidden" name="_next" value="/">
         <div class="form-field">
           <label for="contact-name">Your Name</label>
           <input id="contact-name" type="text" name="name" placeholder="Your Name" required>
@@ -256,7 +256,7 @@
       formStatus.textContent = 'Message sent successfully.';
       formStatus.className = 'form-status is-visible success';
       setTimeout(() => {
-        window.location.href = contactForm.querySelector('[name="_next"]').value;
+        window.location.href = '/';
       }, 2000);
     } catch (error) {
       formStatus.textContent = 'Message could not be sent. Please try again.';
